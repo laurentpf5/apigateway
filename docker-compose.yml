@@ -2,12 +2,14 @@ version: '3'
 services:
     app1:
         image: kennethreitz/httpbin
+        # image: arnaudlacour/httpbin #For amr64
         environment:
             - "GUNICORN_CMD_ARGS=\"--capture-output --error-logfile - --access-logfile - --access-logformat \"%(h)s %(t)s %(r)s %(s)s Host: %({Host}i)s}\"\""
         expose:
          - "80"
     app2:
         image: kennethreitz/httpbin
+        # image: arnaudlacour/httpbin #For amr64
         environment:
             - "GUNICORN_CMD_ARGS=\"--capture-output --error-logfile - --access-logfile - --access-logformat \"%(h)s %(t)s %(r)s %(s)s Host: %({Host}i)s}\"\""
         expose:
